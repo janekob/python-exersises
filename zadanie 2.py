@@ -1,13 +1,19 @@
-def dodatek_stazowy(lata):
-    if lata <= 5:
+def dodatek_stazowy(wprowadzoneLata):
+    try:
+        lata = int(wprowadzoneLata)
+    except ValueError:
+        print('Blad danych wejsciowych! Wprowadzone lata nie sa liczba')
+        return dodatek_stazowy(input('Wprowadź liczbe lat: '))
+    if lata < 0:
+        print('Blad danych wejsciowych! Wprowadzona liczba mniejsza niz zero...' )
+        return dodatek_stazowy(input('Wprowadź liczbe lat: '))
+    elif 0 <= lata <= 5:
         dodatek = (lata * 100)
-    elif  5<lata<=8:
+    elif  5 < lata <= 8:
         dodatek = 500 + ((lata - 5)*200)
     else:
         dodatek = 1100 + ((lata-8))*50
     
     print (dodatek)
     
-lata = int(input('Wprowadź ilość lat: '))
-
-dodatek_stazowy(lata)
+dodatek_stazowy(input('Wprowadź liczbe lat: '))
