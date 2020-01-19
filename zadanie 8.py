@@ -1,6 +1,4 @@
-def bez_duplikatow(tablica):
-    
-    
+def bez_duplikatow(tablica):  
     zbior = set()
     zbior_prim=set()
     for x in tablica:
@@ -11,6 +9,10 @@ def bez_duplikatow(tablica):
             zbior.remove(x)
     return zbior
 
-tablica = list(input('Wprowadź liczby naturalne: '))
-
-bez_duplikatow(tablica)
+try: 
+    tablica = [] 
+      
+    while True: 
+        tablica.append(int(input('Wprowadź liczbę naturalną lub znak by otrzymać wynik: '))) 
+except:
+    print(bez_duplikatow(tablica))
